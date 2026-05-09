@@ -20,8 +20,22 @@ document.querySelectorAll('.nav-list a').forEach(function(link) {
 });
 
 // Swiper Testimonials
+new Swiper('#testimonialSwiper', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  autoplay: { delay: 2500, disableOnInteraction: false },
+  pagination: { el: '.swiper-pagination', clickable: true },
+  breakpoints: { 768: { slidesPerView: 2 } }
+});
 
-
+// Swiper Channels
+new Swiper('#channelsSwiper', {
+  slidesPerView: 1,
+  spaceBetween: 15,
+  autoplay: { delay: 2500, disableOnInteraction: false },
+  pagination: { el: '.swiper-pagination', clickable: true },
+  breakpoints: { 600: { slidesPerView: 2 }, 900: { slidesPerView: 3 } }
+});
 
 // Reveal on scroll
 var revealObserver = new IntersectionObserver(function(entries) {
@@ -123,4 +137,3 @@ themeBtn.addEventListener('click', function() {
     localStorage.setItem('theme', 'dark');
   }
 });
-
